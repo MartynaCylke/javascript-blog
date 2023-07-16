@@ -52,7 +52,7 @@ const optArticleSelector = ".post",
   optTitleListSelector = ".titles",
   optArticleTagsSelector = ".post-tags .list",
   optArticleAuthorSelector = ".post-author",
-  optTagsListSelector = ".tags .list",
+  optTagsListSelector = ".tags.list",
   optCloudClassCount = "5",
   optCloudClassPrefix = "tag-size-",
   optAuthorsListSelector = ".authors.list";
@@ -192,15 +192,6 @@ function generateTags() {
   for (let tag in allTags) {
     /*[NEW] generate code of a link and add it to allTagsHTML */
 
-    const tagLinkHTML =
-      '<li><a class="' +
-      calculateTagClass(allTags[tag], tagsParams) +
-      '" href="#tag-' +
-      tag +
-      '">' +
-      tag +
-      "</a></li>";
-    //allTagsHTML += tagLinkHTML;
     allTagsData.tags.push({
       tag: tag,
       count: allTags[tag],
@@ -351,7 +342,7 @@ function authorClickHandler(event) {
     /* END LOOP: for each found tag link */
   }
   /* execute function "generateTitleLinks" with article selector as argument */
-  generateTitleLinks('[data-author~="' + author + '"]');
+  generateTitleLinks('[data-author="' + author + '"]');
 }
 
 function addClickListenersToAuthors() {
