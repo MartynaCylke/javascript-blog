@@ -124,7 +124,6 @@ function calculateTagClass(count, params) {
 }
 
 function generateTags() {
-  const optTagsListSelector = ".tags.list";
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
 
